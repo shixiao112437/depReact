@@ -1,0 +1,14 @@
+.navs{
+    background-color: #222;
+    color: #fff;
+    font-size: 18px;
+    user-select: none;
+    cursor: pointer;
+    .nav{
+        padding: 10px 0 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    .nav:hover{
+        background-color: blueviolet;
+    }
+}

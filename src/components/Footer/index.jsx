@@ -12,7 +12,7 @@ class Footer extends PureComponent {
     render() {
         return (
             <div>
-                底部
+                底部区域
             </div>
         )
     }
