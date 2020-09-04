@@ -2,4 +2,12 @@
     h2{
         color: yellow;
     }
+    .btn{
+        width: 200px;
+        height: 50px;
+        border-radius: 25px;
+        .ant-btn{
+            border-radius: 25%/100%
+        }
+    }
 }

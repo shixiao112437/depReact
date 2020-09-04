@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react'
+import { Button } from 'antd';
 import './index.scss'
+import { withRouter } from 'react-router-dom';
 class ContentNav extends PureComponent {
     constructor(props) {
         super(props)
@@ -13,11 +15,24 @@ class ContentNav extends PureComponent {
         console.log('QQQQQQQQQQQQQQ',this.props);
         return (
             <div className='ContentNav'>
-                1111
                 <h1>{this.props.currentNav}</h1>
+                <div className='btn'>
+                 <Button block onClick={this.toJump}>了解详情</Button>
+                </div>
             </div>
         )
     }
+    toJump = () =>  {
+        console.log(this,'QQQQQQQQQQQQQQ11111111111111111111')
+
+        this.props.history.push({
+            pathname:'/vue/123',
+            state:{
+                id:'123',
+                name:'哈哈哈哈'
+            }
+        })
+    } 
 }
 
-export default ContentNav
+export default withRouter(ContentNav) 

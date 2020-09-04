@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-
+import './index.scss'
 class Footer extends PureComponent {
     constructor(props) {
         super(props)
@@ -10,9 +10,21 @@ class Footer extends PureComponent {
     }
 
     render() {
+        console.log(this.props.children,'底部');
         return (
-            <div>
-                底部区域
+            <div className='Footer'>
+                <div>
+                    123
+                </div>
+                <div>
+                    123
+                </div>
+                <div>
+                    123
+                </div>
+                <div>
+                    123
+                </div>
             </div>
         )
     }
