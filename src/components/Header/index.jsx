@@ -1,25 +1,25 @@
 import React, { PureComponent } from 'react'
 import { Menu } from 'antd';
 import './index.scss'
+import { withRouter } from 'react-router-dom';
 const { SubMenu } = Menu;
 // 菜单信息
 const MenuInfo = [{ 
                     title: 'node',
-                    path: '/node',
                     key: 'node',
-                    children: [{ title: 'node', path: '/node/list', key: 'node1' }] 
+                    children: [{ title: 'node', path: '/node', key: 'node1' }] 
                   },
                   { 
                     title: 'Webpack',
                     path: '/webpack',
                     key: 'webpack',
-                    children: [{ title: 'loader', path: '/webpack/list', key: 'webpack1' }] 
+                    children: [{ title: 'loader', path: '/webpack', key: 'webpack1' }] 
                   },
                   { 
                     title: 'React',
                     path: '/react',
                     key: 'react',
-                    children: [{ title: 'redux', path: '/react/list', key: 'react1' }] 
+                    children: [{ title: 'redux', path: '/react', key: 'react1' }] 
                   },
                 ]
 
@@ -32,10 +32,11 @@ class Header extends PureComponent {
     
 
     render() {
+      console.log(this.props,'QQQQQQQQQQQQQ123123');
         return (
           // 导航菜单
           <div>
-            <Menu mode='horizontal' theme='dark'>
+            <Menu mode='horizontal' theme='dark' onClick={this.MenuInfo}>
                   { this.renderMenu() }
             </Menu>
            {/*  banner  */}
@@ -47,10 +48,10 @@ class Header extends PureComponent {
       return MenuInfo.map(item =>{
         return (
           <SubMenu title={item.title}
-          key={item.path}>
+          key={item.key}>
               {item.children.map(child=>{
                 return (
-                <Menu.Item onClick={()=>{this.toJump(child)}} key={child.key}>{child.title}</Menu.Item>
+                <Menu.Item onClick={()=>{this.toJump(child)}} key={child.path}>{child.title}</Menu.Item>
                 )
               })}
           </SubMenu>
@@ -60,6 +61,17 @@ class Header extends PureComponent {
     toJump(child){
         console.log(child,'QQQQQQQQQQQQQQQQQQQQQQ');
     }
+    MenuInfo = ({item,key,keyPath,domEvent}) => {
+
+      console.log('好哈111111111111',this);
+        console.log(item);
+        console.log(key);
+        console.log(keyPath);
+        console.log(domEvent);
+        this.props.history.push({
+          pathname:key
+        })
+    } 
 }
 
-export default Header
+export default withRouter(Header) 

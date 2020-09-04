@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Route, Redirect} from 'react-router-dom'
 import Login from './pages/Login/index.jsx'
 import Home from './pages/Home/index.jsx'
 import Vue from './pages/Vue/index.jsx'
+import NodeContent from './pages/Node/index'
 class App extends PureComponent {
     constructor(props) {
         super(props)
@@ -27,6 +28,7 @@ class App extends PureComponent {
                 <Route exact path='/login' component={Login}></Route>
                 <Route exact path='/home' component={Home}></Route>
                 <Route exact path='/vue/123' component={Vue}></Route>
+                <Route  path='/node' component={NodeContent}></Route>
             </Router>
         )
     }
