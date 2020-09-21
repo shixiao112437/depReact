@@ -9,11 +9,14 @@ const navInfo = [{
     title:'http模块',
     path:'/node/http',
 },{
-    title:'koa',
+    title:'koa模块',
     path:'/node/koa',
 },{
-    title:'egg',
+    title:'egg模块',
     path:'/node/egg',
+},{
+    title:'net模块',
+    path:'/node/net',
 }]
 class NodeNav extends PureComponent {
     constructor(props) {

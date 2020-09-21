@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function diffDate(start, end) {
+            var bd = new Date(start)
+            var be = new Date(end)
+            var bd_time = bd.getTime()
+            var be_time = be.getTime()
+            var time_diff = be_time - bd_time;
+            var d_arr = [];
+            for (var i = 0; i <= time_diff; i += 86400000) {
+                var ds = new Date(bd_time + i);
+                d_arr.push(ds.getFullYear() + '-' +( (ds.getMonth() + 1)>9?(ds.getMonth() + 1):'0'+(ds.getMonth() + 1) )+ '-' +( ds.getDate()>9?ds.getDate():'0'+ds.getDate()))
+            }
+            return (d_arr);
+        }
+        let arr = diffDate('2020-08-01', '2020-09-10')
+        console.log(arr);
+        var test = [
+            {
+                serviceName: "HAHAHH",
+                list: [
+                    { count: 9, cumSum: 32, txDate: "2020-08-21" },
+                    { count: 11, cumSum: 12, txDate: "2020-08-22" },
+                    { count: 16, cumSum: 22, txDate: "2020-08-23" },
+                    { count: 0, cumSum: 0, txDate: "2020-08-24" },
+                    { count: 16, cumSum: 22, txDate: "2020-08-25" },
+                ],
+            },
+            {
+                serviceName: "数据啊啊啊",
+                list: [
+                    { count: 3, cumSum: 22, txDate: "2020-08-21" },
+                    { count: 19, cumSum: 12, txDate: "2020-08-22" },
+                    { count: 14, cumSum: 25, txDate: "2020-08-23" },
+                ],
+            },
+        ]
+      
+        test.forEach(item => {
+            const tm = item.list.map(v =>{return v.txDate} )
+            arr.forEach(item1 => {
+                console.log(tm.indexOf(item1),'00000');
+               if(tm.indexOf(item1)==-1) {
+                   item.list.push({
+                       cumSum:0,
+                       count:0,
+                       txDate:item1
+                   })
+               }
+            })
+       
+        })
+        console.log(test,'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww');
+    </script>
+</body>
+
+</html>

@@ -6,6 +6,8 @@ import Egg from './egg/index'
 import Fs from './fs/index'
 import Http from './http/index'
 import Koa from './koa/index'
+import NodeNet from './net/index'
+import BreadCru from './component/BreadCru'
 class NodeContent extends PureComponent {
     constructor(props) {
         super(props)
@@ -22,9 +24,10 @@ class NodeContent extends PureComponent {
                     <NodeNav></NodeNav>
                 </div>
                 <div className={Node.content}>
+                    <BreadCru></BreadCru>
                   <Route 
                       exact 
-                      path="/" 
+                      path="" 
                       render={(props)=>{ //props组件的我们经常用的那个props 现在没什么用
                         // 重定向  重新跳转 到首页 /home/index
                         return <Redirect to="/node/fs"></Redirect>
@@ -34,6 +37,7 @@ class NodeContent extends PureComponent {
                   <Route exact path="/node/http" component={Http}></Route>
                   <Route exact path="/node/koa" component={Koa}></Route>
                   <Route exact path="/node/egg" component={Egg}></Route>
+                  <Route exact path="/node/net" component={NodeNet}></Route>
                 </div>
             </div>
          
