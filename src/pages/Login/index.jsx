@@ -4,8 +4,8 @@ import './index.css'
 import { Card } from 'antd';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-
-
+import { login1 } from '../../api/auth'
+import Api from '../../api/index.js'
 class Login extends PureComponent {
     form =  React.createRef()
 
@@ -13,11 +13,17 @@ class Login extends PureComponent {
         super(props)
 
         this.state = {
-     
+            formItem:{
+                num:'',
+                pwd:''
+            }
 
         }
     }
-
+    componentDidMount(){
+        console.log(Api,'1111111111111');
+       
+    }
     render() {
         return (
             <div className={login.wrap}>
@@ -37,9 +43,8 @@ class Login extends PureComponent {
                                 required: true,
                                 message: 'Please input your Username!',
                             },
-                        ]}
-                    >
-                        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="请输入你的账号" />
+                        ]} >
+                        <Input value={this.state.formItem.num} prefix={<UserOutlined className="site-form-item-icon" />} placeholder="请输入你的账号" />
                     </Form.Item>
                     <Form.Item
                         name="password"
@@ -51,6 +56,7 @@ class Login extends PureComponent {
                         ]}
                     >
                         <Input
+                        value={this.state.formItem.pwd}
                             prefix={<LockOutlined className="site-form-item-icon" />}
                             type="password"
                             placeholder="请输入你的密码"
@@ -75,12 +81,17 @@ class Login extends PureComponent {
         )
     }
     login = async () => {
-        console.log(this.form);
-      let res =await this.form.current.validateFields()
-      console.log(res,'2222222222');
-      this.props.history.push({
-          pathname:'/home'
-      })
+    //    console.log(this.form);
+      let res1 =await this.form.current.validateFields()
+      console.log(res1,'11111111111');
+        if(res1){
+            let res = await login1(res1)
+            console.log(res);
+            this.props.history.push({
+                pathname:'/home'
+            })
+        }
+    
     }
 }
 
