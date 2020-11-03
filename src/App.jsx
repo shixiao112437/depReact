@@ -6,6 +6,7 @@ import Home from './pages/Home/index.jsx'
 import Vue from './pages/Vue/index.jsx'
 import NodeContent from './pages/Node/index'
 import Webpack from './pages/Webpack/index'
+import Test from './pages/Test/index'
 class App extends PureComponent {
     constructor(props) {
         super(props)
@@ -31,6 +32,7 @@ class App extends PureComponent {
                 <Route exact path='/vue/123' component={Vue}></Route>
                 <Route  path='/node' component={NodeContent}></Route>
                 <Route  path='/webpack' component={Webpack}></Route>
+                <Route  path='/test' component={Test}></Route>
                 
             </Router>
         )

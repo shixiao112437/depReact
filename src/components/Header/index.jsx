@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { Menu } from 'antd';
 import './index.scss'
 import { withRouter } from 'react-router-dom';
+import Api from '../../api/index'
 const { SubMenu } = Menu;
 // 菜单信息
 const MenuInfo = [{ 
@@ -27,7 +28,7 @@ class Header extends PureComponent {
 
 
       state = {
-
+        MenuInfo:[]
       }
     
 
@@ -45,7 +46,7 @@ class Header extends PureComponent {
         )
     }
     renderMenu(){
-      return MenuInfo.map(item =>{
+      return this.state.MenuInfo.map(item =>{
         return (
           <SubMenu title={item.title}
           key={item.key}>
@@ -72,6 +73,16 @@ class Header extends PureComponent {
           pathname:key
         })
     } 
+    componentDidMount(){
+      this.getHeadData()
+    }
+    async getHeadData(){
+        let res =await Api.head.getHead()
+        console.log(res,'头部数据');
+        this.setState({
+          MenuInfo:res
+        })
+    }
 }
 
 export default withRouter(Header) 

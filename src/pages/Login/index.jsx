@@ -41,22 +41,23 @@ class Login extends PureComponent {
                         rules={[
                             {
                                 required: true,
-                                message: 'Please input your Username!',
+                                message: '用户名不能为空',
                             },
                         ]} >
-                        <Input value={this.state.formItem.num} prefix={<UserOutlined className="site-form-item-icon" />} placeholder="请输入你的账号" />
+                        <Input onChange={this.numChange} value={this.state.formItem.num} prefix={<UserOutlined className="site-form-item-icon" />} placeholder="请输入你的账号" />
                     </Form.Item>
                     <Form.Item
                         name="password"
                         rules={[
                             {
                                 required: true,
-                                message: 'Please input your Password!',
+                                message: '密码不能为空!',
                             },
                         ]}
                     >
                         <Input
-                        value={this.state.formItem.pwd}
+                            onChange={this.pwdChange}
+                            value={this.state.formItem.pwd}
                             prefix={<LockOutlined className="site-form-item-icon" />}
                             type="password"
                             placeholder="请输入你的密码"
@@ -85,13 +86,29 @@ class Login extends PureComponent {
       let res1 =await this.form.current.validateFields()
       console.log(res1,'11111111111');
         if(res1){
-            let res = await login1(res1)
+            let res = await login1(this.state.formItem)
             console.log(res);
             this.props.history.push({
                 pathname:'/home'
             })
         }
     
+    }
+    numChange = (e)=>{
+        this.setState({
+            formItem:{
+                ...this.state.formItem,
+                num:e.target.value
+            }
+        })
+    }
+    pwdChange = (e)=>{
+        this.setState({
+            formItem:{
+                ...this.state.formItem,
+                pwd:e.target.value
+            }
+        })
     }
 }
 
