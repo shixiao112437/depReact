@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
-import Banner from '../../components/Banner/index'
+// import Banner from '../../components/Banner/index'
+import Thre from './3.jsx'
 
 class Four extends PureComponent {
 
@@ -9,7 +10,7 @@ class Four extends PureComponent {
     render() {
         return (
             <div>
-               4
+               <Thre title={123}></Thre>
 
             </div>
         )

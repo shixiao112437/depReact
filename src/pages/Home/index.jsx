@@ -8,7 +8,7 @@ import Header from '../../components/Header/index'
 
 import One from '../Num/1.jsx'
 import Two from '../Num/2'
-import Three from '../Num/3'
+import Thre from '../Num/3'
 import Four from '../Num/4'
 
 import './index.scss'
@@ -28,7 +28,7 @@ class Home extends PureComponent {
             <Header></Header>
                 <Route path='/home/one' component={One}></Route>
                 <Route path='/home/two' component={Two}></Route>
-                <Route path='/home/three' component={Three}></Route>
+                <Route path='/home/three' component={Thre}></Route>
                 <Route path='/home/four' component={Four}></Route>
             <Footer></Footer>
         </div>

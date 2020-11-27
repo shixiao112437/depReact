@@ -33,7 +33,7 @@ class Header extends PureComponent {
 
 
   render() {
-    console.log(this.props, 'QQQQQQQQQQQQQ123123');
+   
     return (
       // 导航菜单
       <div className='header'>

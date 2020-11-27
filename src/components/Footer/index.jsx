@@ -11,7 +11,6 @@ class Footer extends PureComponent {
     }
 
     render() {
-        console.log(this.props.children,'底部');
         return (
             <div className='Footer'>
                 {this.renderItem()}
