@@ -13,3 +13,13 @@ export const  addTable = (data) => {
         data
     })
 }
+export const  upload = (data) => {
+    return request({
+        url:'/upload',
+        method:'post',
+        headers: {
+            'Content-type': 'multipart/form-data'
+        },
+        data:data
+    })
+}

@@ -2,10 +2,17 @@ import React, { PureComponent } from 'react'
 
 import Footer from '../../components/Footer/index'
 import Header from '../../components/Header/index'
-import Banner from '../../components/Banner/index'
-import SlideMenu from '../../components/SlideMenu/index'
-import ContentNav from '../../components/ContentNav/index'
+
+// import SlideMenu from '../../components/SlideMenu/index'
+// import ContentNav from '../../components/ContentNav/index'
+
+import One from '../Num/1.jsx'
+import Two from '../Num/2'
+import Three from '../Num/3'
+import Four from '../Num/4'
+
 import './index.scss'
+import { Route } from 'react-router-dom'
 class Home extends PureComponent {
     constructor(props) {
         super(props)
@@ -19,18 +26,11 @@ class Home extends PureComponent {
         return (
         <div>
             <Header></Header>
-            <Banner></Banner>
-            <div className='bodyWrap'>
-                <div className='navs'>
-                <SlideMenu changeNav={this.changeNav}></SlideMenu>
-                </div>
-                <div className='content'>
-                 <ContentNav currentNav={this.state.currentNav}></ContentNav>
-                </div>
-            </div>
-           
+                <Route path='/home/one' component={One}></Route>
+                <Route path='/home/two' component={Two}></Route>
+                <Route path='/home/three' component={Three}></Route>
+                <Route path='/home/four' component={Four}></Route>
             <Footer></Footer>
-
         </div>
         )
     }

@@ -2,27 +2,23 @@ import React, { PureComponent } from 'react'
 import login from './index.module.scss'
 import './index.css'
 import { Card } from 'antd';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox ,message} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { login1 } from '../../api/auth'
 import Api from '../../api/index.js'
 class Login extends PureComponent {
     form =  React.createRef()
-
     constructor(props) {
         super(props)
-
         this.state = {
             formItem:{
                 num:'',
                 pwd:''
             }
-
         }
     }
     componentDidMount(){
         console.log(Api,'1111111111111');
-       
     }
     render() {
         return (
@@ -75,6 +71,9 @@ class Login extends PureComponent {
                         <Button onClick={this.login} type="primary" htmlType="button" className="login-form-button">
                             登录
                         </Button>
+                        <Button onClick={this.sign} type="primary" htmlType="button" className="login-form-button">
+                            注册
+                        </Button>
                     </Form.Item>
                 </Form>
                 </Card>
@@ -83,16 +82,37 @@ class Login extends PureComponent {
     }
     login = async () => {
     //    console.log(this.form);
-      let res1 =await this.form.current.validateFields()
-      console.log(res1,'11111111111');
-        if(res1){
-            let res = await login1(this.state.formItem)
-            console.log(res);
-            this.props.history.push({
-                pathname:'/home'
-            })
-        }
+      let status =await this.form.current.validateFields()
+      console.log(status,'11111111111');
+      if(!status) return 
+     try {
+       let res = await login1(this.state.formItem)
+        
+       if(res.code === 0){
+        this.props.history.push({
+            pathname:'/home/one'
+        })
+       }else{
+        this.form.current.resetFields()
+        message.error({
+          content:'密码错误! 请重新输入'  ,
+          duration:3,
+          onClose: () => {
+           
+          }
+        })
+       }
+     } catch (error) {
+         console.log(error.toString());
+     }
+        
     
+    }
+    sign = async () => {
+        this.props.history.push({
+            pathname:"/sign"
+        })
+        
     }
     numChange = (e)=>{
         this.setState({

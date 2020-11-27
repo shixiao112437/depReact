@@ -5,3 +5,15 @@
     // display: flex;
     // justify-content: center;
 }
+.header{
+    position: relative;
+    .logout{
+        position: absolute;
+        right: 40px;
+        top: 50%;
+        transform:translateY(-50%);
+        color: #fff;
+        cursor: pointer;
+
+    }
+}

@@ -1,6 +1,6 @@
 // import React, {  } from 'react'
 import React, { Component } from 'react';
-import { Form, Input, Button, Table, Tooltip, Modal } from 'antd';
+import { Form, Input, Button, Table, Tooltip, Modal,Upload } from 'antd';
 import Api from '../../api/index'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import test from './index.module.scss'
@@ -63,12 +63,24 @@ class TestI extends Component {
             total: 0,
             pageSize: 10,
         },
-        visible: false
+        visible: false,
+        file:''
     }
 
     render() {
         return (
             <div>
+                 <Upload
+                    name="avatar"
+                    listType="picture-card"
+                    className="avatar-uploader"
+                    showUploadList={false}
+                    action=""
+                    beforeUpload={this.beforeUpload}
+                >
+                   ++++++++++
+                </Upload>
+                <Button onClick={this.upload}>提交</Button>
                 <h1>
                     <a href='http://localhost:8080/doc/React/intro.html'>ssdf </a>
                 </h1>
@@ -164,6 +176,23 @@ class TestI extends Component {
             </div>
         )
     }
+    beforeUpload = (file1) => {
+        console.log(file1);
+        this.setState({
+            file:file1
+        },)
+        return false
+    }
+    // 文件提交
+    upload = async () => {
+        // alert(1)
+        console.log(this.state.file);
+        const params = new FormData()
+        params.append('file',this.state.file)
+        params.append('id',123)
+        let res = await Api.test.upload(params)
+        console.log(res);
+    }
     // 获取表格数据
     getData = async () => {
         let res = await this.form.current.getFieldsValue()
@@ -215,7 +244,7 @@ class TestI extends Component {
         })
     }
     componentDidMount() {
-        this.getData()
+        // this.getData()
     }
     handleOk = async () => {
         let data = await this.form1.current.validateFields()

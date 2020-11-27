@@ -17,9 +17,11 @@ class Banner extends PureComponent {
 
     render() {
         return (
+            <div>
             <Carousel autoplay={true}>
                 {this.renderBanner()}
             </Carousel>
+            </div>
         )
     }
     renderBanner(){

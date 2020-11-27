@@ -1,7 +1,7 @@
 import {createStore} from 'redux'
 
 const state = {
-
+ num:''
 }
 
 const reducer = (state,action) => {

@@ -7,10 +7,21 @@ export const login1 = (data) => {
         data
     })
 }
-export const login2 = (data) => {
+export const sign2 = (data) => {
     return request({
-        url:'login',
+        url:'sign',
         method:'post',
         data
+    })
+}
+
+export const upload = (data) => {
+    return request({
+        url:'/upload',
+        method:'post',
+        data,
+        headers: {
+            'Content-Type': 'multipart/form-data;charset=UTF-8'
+          },
     })
 }
