@@ -23,3 +23,8 @@ export const  upload = (data) => {
         data:data
     })
 }
+export const getMOvie = () => {
+    return request({
+        url:'/getmovie',
+    })
+}

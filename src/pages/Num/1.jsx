@@ -25,12 +25,17 @@ class One extends PureComponent {
         )
     }
     beforeUpload = (file) => {
-        console.log(file);
-      let src =   window.URL.createObjectURL(file);
+        // console.log(file);
+       let src =   window.URL.createObjectURL(file);
         this.setState({
             file,
             src
         })
+        let reader = new FileReader()
+        reader.onload = (res) => {
+            console.log(res,'哈哈哈哈哈');
+        }
+        reader.readAsText(file)
         window.URL.createObjectURL(file);
         return false
     }

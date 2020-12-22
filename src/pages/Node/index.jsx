@@ -27,7 +27,7 @@ class NodeContent extends PureComponent {
                     <BreadCru></BreadCru>
                   <Route 
                       exact 
-                      path="" 
+                      path="/" 
                       render={(props)=>{ //props组件的我们经常用的那个props 现在没什么用
                         // 重定向  重新跳转 到首页 /home/index
                         return <Redirect to="/node/fs"></Redirect>

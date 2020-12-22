@@ -1,6 +1,8 @@
 
 import React, { PureComponent } from 'react'
+import { Slider } from 'antd';
 import './index.scss'
+import PropTypes from 'prop-types'
 class Captcha extends PureComponent {
     state = {
         down:false,
@@ -16,7 +18,7 @@ class Captcha extends PureComponent {
                     <canvas></canvas>
                     <canvas></canvas>
                 </div>
-                <div className="slide">
+                <div className="slide" onMouseMove={this.movewrap}>
                     <button onMouseDown={this.down}
                     onMouseMove = {this.move}
                     onMouseUp = {this.end}
@@ -25,6 +27,13 @@ class Captcha extends PureComponent {
                         12
                     </button>
                 </div>
+
+                <Slider
+                    min={1}
+                    max={300}
+                    onChange={this.onChange}
+
+                />
             </div>
         )
     }
@@ -44,11 +53,19 @@ class Captcha extends PureComponent {
     }
     move = (e) => {
         if(!this.state.down) return
-    const diff = e.clientX-this.state.startX
-      this.setState({
-          left:diff
-      })
+        const diff = e.clientX-this.state.startX
+        if(diff<0||diff>300) return false
+        this.setState({
+            left:diff,
+            endX:e.clientX
+
+        })
+    }
+    onChange = (val) => {
+        console.log(val);
     }
 }
-
+// Captcha.PropTypes = {
+//     title:PropTypes.string,
+// }
 export default Captcha

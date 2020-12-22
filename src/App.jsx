@@ -5,7 +5,7 @@ import Login from './pages/Login/index.jsx'
 import Home from './pages/Home/index.jsx'
 import Vue from './pages/Vue/index.jsx'
 import NodeContent from './pages/Node/index'
-import Webpack from './pages/Webpack/index'
+import Artic from './pages/Artic/index'
 import Test from './pages/Test/index'
 import Sign from './pages/Sign/index'
 class App extends PureComponent {
@@ -32,7 +32,7 @@ class App extends PureComponent {
                 }} component={Home}></Route>
                 <Route exact path='/vue/123' component={Vue}></Route>
                 <Route  path='/node' component={NodeContent}></Route>
-                <Route  path='/webpack' component={Webpack}></Route>
+                <Route  path='/artic' component={Artic}></Route>
                 <Route  path='/test' component={Test}></Route>
             </Router>
         )

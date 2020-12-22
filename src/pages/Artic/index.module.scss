@@ -1,0 +1,10 @@
+.wrap{
+    display: flex;
+    // background-color: gray;
+}
+.route{
+    flex: 1;
+    padding: 20px;
+    height: 100vh;
+    overflow: auto;
+}

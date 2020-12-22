@@ -11,10 +11,9 @@ const MenuInfo = [{
   children: [{ title: 'node', path: '/node', key: 'node1' }]
 },
 {
-  title: 'Webpack',
-  path: '/webpack',
-  key: 'webpack',
-  children: [{ title: 'loader', path: '/webpack', key: 'webpack1' }]
+  title: '文章模块',
+  path: '/artic',
+  key: '/artic'
 },
 {
   title: 'React',
@@ -28,41 +27,41 @@ class Header extends PureComponent {
 
 
   state = {
-    MenuInfo: []
+    MenuInfo
   }
 
 
   render() {
-   
+
     return (
       // 导航菜单
       <div className='header'>
-        <Menu mode='horizontal' theme='dark' onClick={this.MenuInfo}>
+        <Menu mode='horizontal' theme='dark' onSelect={this.MenuJump}>
           {this.renderMenu()}
         </Menu>
         {/*  banner  */}
-        <span className='logout'> 退出登录</span> 
+        <span className='logout'> 退出登录</span>
       </div>
     )
   }
   renderMenu() {
-    return this.state.MenuInfo.map(item => {
-      return (
-        <SubMenu title={item.title}
-          key={item.key}>
-          {item.children.map(child => {
-            return (
-              <Menu.Item onClick={() => { this.toJump(child) }} key={child.path}>{child.title}</Menu.Item>
-            )
-          })}
-        </SubMenu>
-      )
+    return MenuInfo.map(item => {
+      if(item.children){
+        return (
+          <SubMenu title={item.title}
+            key={item.key}>
+            {item.children.map(child => {
+              return (<Menu.Item  key={child.path}>{child.title}</Menu.Item>)
+            })}
+          </SubMenu>
+        )
+      }else{
+        return (<Menu.Item  key={item.path}>{item.title}</Menu.Item>)
+      }
+ 
     })
   }
-  toJump(child) {
-    console.log(child, 'QQQQQQQQQQQQQQQQQQQQQQ');
-  }
-  MenuInfo = ({ item, key, keyPath, domEvent }) => {
+  MenuJump = ({ item, key, keyPath, domEvent }) => {
     console.log('好哈111111111111', this);
     console.log(item);
     console.log(key);
@@ -73,14 +72,7 @@ class Header extends PureComponent {
     })
   }
   componentDidMount() {
-    this.getHeadData()
-  }
-  async getHeadData() {
-    // let res =await Api.head.getHead()
-    // console.log(res,'头部数据');
-    this.setState({
-      MenuInfo: MenuInfo
-    })
+ 
   }
 }
 

@@ -1,0 +1,37 @@
+.article-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px  0;
+    border-bottom: 1px solid #ccc;
+    .left {
+      display: flex;
+      img {
+        width:180px;
+        height: 100px;
+        border-radius: 4px;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        justify-content: space-around;
+        margin-left: 10px;
+        .date {
+          color: #999;
+          font-size:12px;
+        }
+        .tag {
+          width: 60px;
+          text-align: center;
+        }
+      }
+    }
+    .right {
+      span {
+        font-size: 12px;
+        margin-right: 8px;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+  }
