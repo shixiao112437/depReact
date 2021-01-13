@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Menu } from 'antd';
 import './index.scss'
 import { withRouter } from 'react-router-dom';
@@ -23,7 +23,7 @@ const MenuInfo = [{
 },
 ]
 
-class Header extends PureComponent {
+class Header extends Component {
 
 
   state = {

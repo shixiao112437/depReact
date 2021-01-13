@@ -1,9 +1,9 @@
 
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Slider } from 'antd';
 import './index.scss'
 import PropTypes from 'prop-types'
-class Captcha extends PureComponent {
+class Captcha extends Component {
     state = {
         down:false,
         left:10,

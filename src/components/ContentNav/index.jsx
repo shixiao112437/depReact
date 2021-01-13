@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Button } from 'antd';
 import './index.scss'
 import { withRouter } from 'react-router-dom';
-class ContentNav extends PureComponent {
+class ContentNav extends Component {
     constructor(props) {
         super(props)
 

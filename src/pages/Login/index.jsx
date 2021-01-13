@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import login from './index.module.scss'
 import './index.css'
 import { Card } from 'antd';
@@ -6,7 +6,7 @@ import { Form, Input, Button, Checkbox ,message} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { login1 } from '../../api/auth'
 import Api from '../../api/index.js'
-class Login extends PureComponent {
+class Login extends Component {
     form =  React.createRef()
     constructor(props) {
         super(props)
@@ -76,6 +76,9 @@ class Login extends PureComponent {
                         </Button>
                     </Form.Item>
                 </Form>
+                <Button type='primary'>
+                            注册
+                        </Button>
                 </Card>
             </div>
         )

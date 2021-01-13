@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import {BrowserRouter as Router,Route, Redirect} from 'react-router-dom'
-
+import Sign from './pages/Sign/index'
 import Login from './pages/Login/index.jsx'
 import Home from './pages/Home/index.jsx'
 import Vue from './pages/Vue/index.jsx'
 import NodeContent from './pages/Node/index'
 import Artic from './pages/Artic/index'
 import Test from './pages/Test/index'
-import Sign from './pages/Sign/index'
-class App extends PureComponent {
+import PersonInfo from './pages/person/index'
+class App extends Component {
     constructor(props) {
         super(props)
         this.state = {       
@@ -27,6 +27,7 @@ class App extends PureComponent {
                 ></Route>
                 <Route exact path='/sign' component={Sign}></Route>
                 <Route exact path='/login' component={Login}></Route>
+                <Route exact path='/personinfo' component={PersonInfo}></Route>
                 <Route path='/home' render = {(props) => {
                        return <Redirect to="/home/one"></Redirect>
                 }} component={Home}></Route>

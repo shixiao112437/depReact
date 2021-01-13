@@ -28,7 +28,7 @@ class Artic extends Component {
         return (
             <div className={artic.wrap} style={{height:'100vh'}}>
                 <div>
-                <Menu onSelect={this.routeJump.bind(this)}  style={{width:256,height:'100%'}} mode='vertical' theme='dark'>
+                <Menu defaultSelectedKeys={this.props.location.pathname} onSelect={this.routeJump.bind(this)}  style={{width:256,height:'100%'}} mode='vertical' theme='dark'>
                  {this.renderMenu()}
                  </Menu>
                 </div>
@@ -39,7 +39,7 @@ class Artic extends Component {
                     </Route>
                     <Route path='/artic/add' component={Add}></Route>
                     <Route path='/artic/list' component={List}></Route>
-                    <Route path='/artic/detail' component={Detail}></Route>
+                    <Route path='/artic/detail/:id' component={Detail}></Route>
                 </div>
             
 

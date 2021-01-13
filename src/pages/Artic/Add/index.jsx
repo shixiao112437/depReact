@@ -59,6 +59,7 @@ export default function Add() {
             })
         }
       } catch (error) {
+        message.error(error.toString())
           
       }
   

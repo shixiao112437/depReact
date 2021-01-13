@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 // import Banner from '../../components/Banner/index'
 import Thre from './3.jsx'
 
-class Four extends PureComponent {
+class Four extends Component {
 
     state={
 

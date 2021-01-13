@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Table ,Button} from 'antd'
 import Footer from '../../components/Footer/index'
 import Header from '../../components/Header/index'
@@ -17,7 +17,7 @@ import { Route } from 'react-router-dom'
 
 const {Column} =  Table
 
-class Home extends PureComponent {
+class Home extends Component {
     constructor(props) {
         super(props)
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx'
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css'; // 引入antd 组件样式   按需引入
 import './index.css'
 import  {store}  from './store/index'
 import { Provider } from 'react-redux'

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Form, Input, Button, Checkbox, Card } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import Api from '../../api/index.js'
@@ -12,7 +12,7 @@ const layout = {
     },
   };
 
-class Sign extends PureComponent {
+class Sign extends Component {
     form = React.createRef()
 
     constructor(props) {

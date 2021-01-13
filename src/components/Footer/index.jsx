@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import './index.scss'
-class Footer extends PureComponent {
+class Footer extends Component {
     constructor(props) {
         super(props)
 

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Route,Redirect } from 'react-router-dom'
 import NodeNav from './component/NodeNav'
 import Node  from './index.module.scss' 
@@ -8,7 +8,7 @@ import Http from './http/index'
 import Koa from './koa/index'
 import NodeNet from './net/index'
 import BreadCru from './component/BreadCru'
-class NodeContent extends PureComponent {
+class NodeContent extends Component {
     constructor(props) {
         super(props)
 

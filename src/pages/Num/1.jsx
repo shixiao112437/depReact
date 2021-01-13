@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import Banner from '../../components/Banner/index'
 
 import { Upload, message, Button } from 'antd';
@@ -6,7 +6,7 @@ import { UploadOutlined } from '@ant-design/icons';
 
 import { upload } from '../../api/test'
 
-class One extends PureComponent {
+class One extends Component {
 
     state = {
         file: '',

@@ -13,3 +13,20 @@ export const addArtic = (data) => {
         data
     })
 }
+
+export const getDetail = (params) => {
+    return request({
+        url:'/articDetail',
+        method:'get',
+        params
+    })
+}
+export const delArtic = (data) => {
+    return request({
+        url:'/delArtic',
+        method:'post',
+        data:{
+            _id:data
+        }
+    })
+}

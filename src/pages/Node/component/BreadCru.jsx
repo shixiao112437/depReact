@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Breadcrumb } from 'antd';
 import { withRouter, Link } from 'react-router-dom';
 
 import './bread.scss'
-class BreadCru extends PureComponent {
+class BreadCru extends Component {
     constructor(props) {
         super(props)
 

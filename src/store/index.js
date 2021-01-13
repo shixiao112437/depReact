@@ -25,9 +25,12 @@ let reducer = (state,action) => {
     return newState
   }else if(type==='editList'){
     const index = state.list.findIndex( item => { return item.id===action.id})
-    return Object.assign({},state,{
-      lsit: state.list[index].status = true
-    })
+  let list = [...newState.list]
+  list[index].status = true
+    return {
+      ...newState,
+      list
+    }
   }else{
     return newState
   }

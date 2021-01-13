@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 
-class Koa extends PureComponent {
+class Koa extends Component {
     constructor(props) {
         super(props)
 

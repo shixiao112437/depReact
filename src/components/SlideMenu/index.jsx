@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import './index.scss'
 const navs =[{
     title:111,
@@ -19,7 +19,7 @@ const navs =[{
     title:666,
     path:'666'
 },]
-class SlideMenu extends PureComponent {
+class SlideMenu extends Component {
     constructor(props) {
         super(props)
         this.state = {

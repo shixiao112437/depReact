@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Menu } from 'antd';
 import './index.scss'
 import { withRouter } from 'react-router-dom';
@@ -18,7 +18,7 @@ const navInfo = [{
     title:'net模块',
     path:'/node/net',
 }]
-class NodeNav extends PureComponent {
+class NodeNav extends Component {
     constructor(props) {
         super(props)
 

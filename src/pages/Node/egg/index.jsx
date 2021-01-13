@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 
-class Egg extends PureComponent {
+class Egg extends Component {
     constructor(props) {
         super(props)
 

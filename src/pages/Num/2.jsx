@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import Captcha from '../../components/Captcha/index'
 
-class Two extends PureComponent {
+class Two extends Component {
 
     state={
 

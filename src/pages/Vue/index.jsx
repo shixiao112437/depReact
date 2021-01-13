@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import Footer from '../../components/Footer/index'
 import Header from '../../components/Header/index'
 import { List, Avatar } from 'antd';
@@ -19,7 +19,7 @@ const ListMenu = [{
     content: '4444444444444444',
     title: '44'
 }]
-class Index extends PureComponent {
+class Index extends Component {
     constructor(props) {
         super(props)
 
